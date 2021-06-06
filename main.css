@@ -1,0 +1,7 @@
+main {
+    /* Centrage vertical et horizontal du texte */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

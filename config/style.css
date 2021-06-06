@@ -1,0 +1,28 @@
+main {
+    /* dimension du fond */
+    width: 500px;  
+    height: 200px; 
+    
+    /* couleur du fond; supprimer si vous n'en voulez pas */
+    background-color: rgba(31,31,35,0.8); 
+
+    /* angle des bords */
+    border-radius: 15px;      
+
+    /* polices utilisées */
+    font-family: 'Courier New', Courier, monospace; 
+    
+    /* supprimer si vous ne voulez pas de contour; modifier l'url si vous voulez le changer */
+    /* supprimer le ou changer le si vous modifiez la taille du fond */
+    background-image: url(./rainborder.png);
+}
+
+.timer { /* style du texte utilisé pour le timer */
+    font-size: 100px; 
+    color: #eceff4; 
+}
+
+.annonce { /* style du texte utilisé pour la phrase affichée à la fin du timer */
+    font-size: 48px;  
+    color: #eceff4; 
+}
