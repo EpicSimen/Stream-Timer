@@ -1,0 +1,78 @@
+<!-- 
+
+    Widget Timer pour OBS / Streamlabs
+    Le timer se lance automatiquement quand la scène s'ouvre
+
+Benejico, 29/05/2021 -->
+
+<script>  // Configuration
+    let minutesTimer = 1,
+        secondesTimer = 0, 
+        phraseApresTimer = "Le stream <br/> va commencer !";
+</script>
+
+<style>  
+    main {
+        width: 500px;  
+        height: 200px; 
+        
+        background-color: rgba(31,31,35,0.8); 
+        background-image: url(./rainborder.png);
+        border-radius: 15px;      
+
+        font-family: 'Courier New', Courier, monospace; 
+        
+        /* Centrage vertical et horizontal du texte */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .timer {
+        font-size: 100px; 
+        color: #eceff4; 
+    }
+
+    .annonce {
+        font-size: 48px;  
+        color: #eceff4; 
+    }
+</style>
+
+<script>  // Logique du script
+    function countdown( elementName, minutes, seconds ) // source : https://codepen.io/rxsharp/pen/jPZgpX
+    {
+        var element, endTime, hours, mins, msLeft, time;
+
+        function twoDigits( n )
+        {
+            return (n <= 9 ? "0" + n : n);
+        }
+
+        function updateTimer()
+        {
+            msLeft = endTime - (+new Date);
+            if ( msLeft < 1000 ) {
+                element.innerHTML = phraseApresTimer;
+                document.getElementById("timer").classList.add('annonce');
+                document.getElementById("timer").classList.remove('timer');
+            } else {
+                time = new Date( msLeft );
+                hours = time.getUTCHours();
+                mins = time.getUTCMinutes();
+                element.innerHTML = (hours ? hours + ':' + twoDigits( mins ) : mins) + ':' + twoDigits( time.getUTCSeconds() );
+                setTimeout( updateTimer, time.getUTCMilliseconds() + 500 );
+            }
+        }
+
+        element = document.getElementById( elementName );
+        endTime = (+new Date) + 1000 * (60*minutes + seconds) + 500;
+        updateTimer();
+    } 
+</script>
+
+<main><div id="timer" class="timer"></div></main>
+<script>  // Execution du script
+    countdown('timer', minutesTimer, secondesTimer); 
+</script>
