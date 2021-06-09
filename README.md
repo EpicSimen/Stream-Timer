@@ -1,4 +1,10 @@
 # Stream-Timer
+
+<p align="center">
+  <span>Français</span> |
+  <a href="https://github.com/EpicSimen/Stream-Timer/blob/main/lang/README.en.md">English</a>
+</p>
+
 Widget Timer pour OBS / Streamlabs
 
 # Ajout du timer sur OBS / Streamlabs
