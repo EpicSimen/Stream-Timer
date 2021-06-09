@@ -20,5 +20,3 @@ Timer widget for OBS / Streamlabs
 All configuration files are located in the config folder. 
 
 To set the time the timer will last or the sentence displayed at the end, it's in reglages.js. For the design of the timer, it is in style.css.
-
-Translated with www.DeepL.com/Translator (free version)
